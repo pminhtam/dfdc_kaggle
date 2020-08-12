@@ -311,13 +311,13 @@ testloader = torch.utils.data.DataLoader(test_data, batch_size=batch_size,num_wo
 criterion = nn.BCELoss().cuda()
 optimizer = optim.Adam(model.parameters(), lr=0.003)
 
-model.load_state_dict(torch.load("/home/tampm/code/kaggle/LocalNN_pytorch/LocalNN_pytorch_1.pt"))
+model.load_state_dict(torch.load("/home/tampm/code/kaggle/LocalNN_pytorch/LocalNN_pytorch_3.pt"))
 
 train_losses, test_losses = [], []
 import time
 text_writer = open(os.path.join(checkpoint, 'train.csv'), 'a')
 model.train()
-for epoch in range(epochs):
+for epoch in range(5,epochs):
     for inputs, labels in tqdm(trainloader):
         steps += 1
         inputs, labels = inputs.to(device), labels.float().to(device)

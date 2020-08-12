@@ -76,4 +76,4 @@ checkpoints = keras.callbacks.ModelCheckpoint("./log_inception_keras/checkpoint_
 
 early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=0, patience=0)
 
-model.fit_generator(generator,validation_data=test_generator,steps_per_epoch=int(637963/batch_size), epochs=100,workers=8,validation_steps=3879/batch_size,class_weight = class_weights,callbacks = [tensorboard_callback,checkpoints])
+model.fit_generator(generator,validation_data=test_generator,steps_per_epoch=int(637963/batch_size), epochs=100,workers=8,validation_steps=3879/batch_size,class_weight = class_weights_2,callbacks = [tensorboard_callback,checkpoints])
